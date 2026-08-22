@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs
+*.log
+
+# Generated results
+evaluation/results/
+
+# Kubernetes temporary files
+*.tmp
+
+# Local credentials
+credentials.json
+*.pem
+*.key
+
+# Terraform later
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# OS
+Thumbs.db

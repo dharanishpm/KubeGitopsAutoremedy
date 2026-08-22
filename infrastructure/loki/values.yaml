@@ -1,0 +1,16 @@
+# Helm values for Grafana Loki (log aggregation)
+# https://github.com/grafana/helm-charts/tree/main/charts/loki-stack
+
+loki:
+  persistence:
+    enabled: false
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 250m
+      memory: 512Mi
+
+promtail:
+  enabled: true
