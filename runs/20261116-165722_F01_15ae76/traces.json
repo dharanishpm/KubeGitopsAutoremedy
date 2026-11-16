@@ -1,0 +1,10 @@
+{
+  "agent": "traces",
+  "service": "frontend",
+  "status": "MISSING_EVIDENCE",
+  "note": "Agent failed or output unparseable. NOT evidence of health.",
+  "returncode": 2,
+  "stdout_tail": "Analyzing traces for service: frontend\nLookback window: 15 minutes\nQuerying Jaeger...\n\nERROR: Unable to communicate with Jaeger: HTTPConnectionPool(host='localhost', port=16686): Max retries exceeded with url: /api/traces?service=frontend&start=1794847342634982&end=1794848242634982&limit=50 (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=16686): Failed to establish a new connection: [Errno 61] Connection refused\"))\n",
+  "stderr_tail": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020\n  warnings.warn(\n",
+  "parsed_partial": null
+}

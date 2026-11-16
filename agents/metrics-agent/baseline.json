@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "created_at": "2026-09-09T20:50:55.364146+00:00",
+    "duration_minutes": 30,
+    "step_seconds": 30,
+    "sigma_multiplier": 3,
+    "namespace": "default",
+    "services": [
+      "adservice",
+      "cartservice",
+      "checkoutservice",
+      "currencyservice",
+      "emailservice",
+      "frontend",
+      "paymentservice",
+      "productcatalogservice",
+      "recommendationservice",
+      "shippingservice"
+    ]
+  },
+  "services": {
+    "adservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.005434365563640202,
+        "stddev": 0.000769244632596501,
+        "lower_bound": 0.003126631665850699,
+        "upper_bound": 0.007742099461429706
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 218239177.44262296,
+        "stddev": 7495575.638051593,
+        "lower_bound": 195752450.5284682,
+        "upper_bound": 240725904.35677773
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 10.112738884953089,
+        "stddev": 1.9804058568395542,
+        "lower_bound": 4.171521314434426,
+        "upper_bound": 16.053956455471752
+      }
+    },
+    "cartservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.004020483532357536,
+        "stddev": 0.0006284189126342095,
+        "lower_bound": 0.0021352267944549073,
+        "upper_bound": 0.0059057402702601645
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 172676750.6885246,
+        "stddev": 2792257.6881828774,
+        "lower_bound": 164299977.62397596,
+        "upper_bound": 181053523.75307325
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 1.3539187069404022,
+        "stddev": 0.8944908272455832,
+        "lower_bound": 0.0,
+        "upper_bound": 4.037391188677152
+      }
+    },
+    "checkoutservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.0014855506177891735,
+        "stddev": 0.0002060919905151929,
+        "lower_bound": 0.0008672746462435949,
+        "upper_bound": 0.002103826589334752
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 73441615.73770492,
+        "stddev": 149673.719490308,
+        "lower_bound": 72992594.57923399,
+        "upper_bound": 73890636.89617585
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 0.41557333803063395,
+        "stddev": 0.28401625494480176,
+        "lower_bound": 0.0,
+        "upper_bound": 1.2676221028650392
+      }
+    },
+    "currencyservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.025186564011357722,
+        "stddev": 0.015877648491216523,
+        "lower_bound": 0.0,
+        "upper_bound": 0.07281950948500729
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 150126524.852459,
+        "stddev": 16029117.707001578,
+        "lower_bound": 102039171.73145428,
+        "upper_bound": 198213877.97346374
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 635.3770491803278,
+        "stddev": 1.002728518031833,
+        "lower_bound": 632.3688636262324,
+        "upper_bound": 638.3852347344233
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 46.569001416000134,
+        "stddev": 26.459369701230543,
+        "lower_bound": 0.0,
+        "upper_bound": 125.94711051969176
+      }
+    },
+    "emailservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.006297632139130996,
+        "stddev": 0.0004674869870847854,
+        "lower_bound": 0.00489517117787664,
+        "upper_bound": 0.007700093100385352
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 86332734.95081967,
+        "stddev": 288640.3676548855,
+        "lower_bound": 85466813.84785502,
+        "upper_bound": 87198656.05378433
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 3.0,
+        "stddev": 0.0,
+        "lower_bound": 3.0,
+        "upper_bound": 3.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 0.48869392257763167,
+        "stddev": 0.2930167363207894,
+        "lower_bound": 0.0,
+        "upper_bound": 1.3677441315399999
+      }
+    },
+    "frontend": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.0015115351843665225,
+        "stddev": 0.0003167749145661616,
+        "lower_bound": 0.0005612104406680378,
+        "upper_bound": 0.002461859928065007
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 80159794.36065574,
+        "stddev": 103372.690318419,
+        "lower_bound": 79849676.28970048,
+        "upper_bound": 80469912.431611
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 1.0375685690504688,
+        "stddev": 0.9088279466451393,
+        "lower_bound": 0.0,
+        "upper_bound": 3.764052408985887
+      }
+    },
+    "paymentservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.024262355397763766,
+        "stddev": 0.015436163972027031,
+        "lower_bound": 0.0,
+        "upper_bound": 0.07057084731384486
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 155403314.36065573,
+        "stddev": 4926263.014442617,
+        "lower_bound": 140624525.3173279,
+        "upper_bound": 170182103.40398356
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 601.2295081967213,
+        "stddev": 0.9898390883194231,
+        "lower_bound": 598.259990931763,
+        "upper_bound": 604.1990254616796
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 45.859505495747435,
+        "stddev": 25.552574860610388,
+        "lower_bound": 0.0,
+        "upper_bound": 122.5172300775786
+      }
+    },
+    "productcatalogservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.0017049400761409577,
+        "stddev": 0.00020426951303183832,
+        "lower_bound": 0.001092131537045443,
+        "upper_bound": 0.0023177486152364726
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 79896038.81967214,
+        "stddev": 203823.47295552163,
+        "lower_bound": 79284568.40080558,
+        "upper_bound": 80507509.2385387
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 0.6358563121073081,
+        "stddev": 0.3872479300113283,
+        "lower_bound": 0.0,
+        "upper_bound": 1.7976001021412928
+      }
+    },
+    "recommendationservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.006381480093780706,
+        "stddev": 0.0004518532410188899,
+        "lower_bound": 0.005025920370724036,
+        "upper_bound": 0.007737039816837377
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 84517266.8852459,
+        "stddev": 162965.05351046904,
+        "lower_bound": 84028371.7247145,
+        "upper_bound": 85006162.0457773
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 0.7049734034670415,
+        "stddev": 0.3233729687863328,
+        "lower_bound": 0.0,
+        "upper_bound": 1.67509230982604
+      }
+    },
+    "shippingservice": {
+      "cpu_usage_cores": {
+        "sample_count": 61,
+        "mean": 0.0010496201469836336,
+        "stddev": 0.0001890535772508316,
+        "lower_bound": 0.00048245941523113883,
+        "upper_bound": 0.0016167808787361285
+      },
+      "memory_usage_bytes": {
+        "sample_count": 61,
+        "mean": 68858863.21311475,
+        "stddev": 136955.22977444303,
+        "lower_bound": 68447997.52379142,
+        "upper_bound": 69269728.90243809
+      },
+      "pod_restarts": {
+        "sample_count": 61,
+        "mean": 2.0,
+        "stddev": 0.0,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "cpu_throttling_percentage": {
+        "sample_count": 61,
+        "mean": 0.47762492522921435,
+        "stddev": 0.37688070129757323,
+        "lower_bound": 0.0,
+        "upper_bound": 1.608267029121934
+      }
+    }
+  }
+}

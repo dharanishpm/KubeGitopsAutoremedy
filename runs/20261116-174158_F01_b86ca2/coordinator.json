@@ -1,0 +1,776 @@
+{
+  "version": "V2",
+  "agent": "coordinator",
+  "timestamp": "2026-11-16T17:42:46.722109+00:00",
+  "ollama": {
+    "url": "http://localhost:11434/api/generate",
+    "model": "llama3.2:latest",
+    "temperature": 0
+  },
+  "input_files": {
+    "metrics": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-174158_F01_b86ca2/metrics.json",
+    "logs": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-174158_F01_b86ca2/logs.json",
+    "trace": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-174158_F01_b86ca2/traces.json",
+    "k8s": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-174158_F01_b86ca2/k8s.json"
+  },
+  "structured_agent_evidence": {
+    "metrics": {
+      "agent": "metrics-agent",
+      "timestamp": "2026-11-16T17:41:59.168034+00:00",
+      "namespace": "default",
+      "service": "currencyservice",
+      "baseline": {
+        "created_at": "2026-09-09T20:50:55.364146+00:00",
+        "duration_minutes": 30,
+        "sigma_multiplier": 3
+      },
+      "current_metrics": {
+        "cpu_usage_cores": [
+          {
+            "pod": "currencyservice-865b7bd584-74xnx",
+            "value": 0.002498477777777778
+          }
+        ],
+        "memory_usage_bytes": [],
+        "pod_restarts_15m": [
+          {
+            "pod": "currencyservice-865b7bd584-74xnx",
+            "value": 0.0
+          }
+        ],
+        "cpu_throttling_percentage": [
+          {
+            "pod": "currencyservice-865b7bd584-74xnx",
+            "value": 3.7037037037037033
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "metric": "cpu_usage_cores",
+          "current_value": 0.002498477777777778,
+          "baseline_mean": 0.025186564011357722,
+          "baseline_stddev": 0.015877648491216523,
+          "lower_bound": 0.0,
+          "upper_bound": 0.07281950948500729,
+          "deviation_from_mean": -0.022688086233579943,
+          "z_score": -1.428932391728595,
+          "direction": "within_baseline",
+          "statistical_deviation": false,
+          "degradation_anomaly": false,
+          "anomalous": false,
+          "status": "NORMAL",
+          "pod": "currencyservice-865b7bd584-74xnx"
+        },
+        {
+          "metric": "cpu_throttling_percentage",
+          "current_value": 3.7037037037037033,
+          "baseline_mean": 46.569001416000134,
+          "baseline_stddev": 26.459369701230543,
+          "lower_bound": 0.0,
+          "upper_bound": 125.94711051969176,
+          "deviation_from_mean": -42.86529771229643,
+          "z_score": -1.6200422835583608,
+          "direction": "within_baseline",
+          "statistical_deviation": false,
+          "degradation_anomaly": false,
+          "anomalous": false,
+          "status": "NORMAL",
+          "pod": "currencyservice-865b7bd584-74xnx"
+        }
+      ],
+      "statistical_deviations": [],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "statistical_deviation_count": 0,
+      "anomaly_detected": false,
+      "metric_sample_count": 3,
+      "has_metric_data": true
+    },
+    "logs": {
+      "agent": "log-agent",
+      "timestamp": "2026-11-16T17:42:05.829162+00:00",
+      "namespace": "default",
+      "service": "currencyservice",
+      "lookback_minutes": 15,
+      "query": "{namespace=\"default\",app=\"currencyservice\"}",
+      "status": "NORMAL",
+      "total_log_entries": 60,
+      "normal_log_entries": 60,
+      "warning_log_entries": 0,
+      "error_log_entries": 0,
+      "error_rate": 0.0,
+      "warning_rate": 0.0,
+      "affected_pods": [],
+      "severity_counts": {
+        "NORMAL": 60,
+        "WARNING": 0,
+        "ERROR": 0
+      },
+      "error_detected": false,
+      "warning_detected": false,
+      "error_entries": [],
+      "warning_entries": [],
+      "has_log_data": true
+    },
+    "trace": {
+      "agent": "trace-agent",
+      "timestamp": "2026-11-16T17:42:35.096286+00:00",
+      "namespace": null,
+      "service": "frontend",
+      "lookback_minutes": 15,
+      "status": "ERROR_EVIDENCE",
+      "total_traces": 50,
+      "total_spans": 260,
+      "error_trace_count": 3,
+      "error_span_count": 12,
+      "error_rate": 0.06,
+      "affected_services": [
+        "checkoutservice",
+        "frontend"
+      ],
+      "affected_operations": [
+        {
+          "operation": "hipstershop.CheckoutService/PlaceOrder",
+          "error_count": 6
+        },
+        {
+          "operation": "POST",
+          "error_count": 3
+        },
+        {
+          "operation": "hipstershop.PaymentService/Charge",
+          "error_count": 3
+        }
+      ],
+      "error_spans": [
+        {
+          "trace_id": "5eb4fb7c4c23de8bf888bac949d906f0",
+          "span": {
+            "span_id": "94d0e065aa1edc45",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "frontend",
+            "start_time_us": 1794850872442925,
+            "duration_us": 10812,
+            "duration_ms": 10.812,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 10812,
+              "duration_ms": 10.812
+            }
+          }
+        },
+        {
+          "trace_id": "5eb4fb7c4c23de8bf888bac949d906f0",
+          "span": {
+            "span_id": "087db906aceac709",
+            "operation": "POST",
+            "service": "frontend",
+            "start_time_us": 1794850872442538,
+            "duration_us": 11752,
+            "duration_ms": 11.752,
+            "references": 0,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 11752,
+              "duration_ms": 11.752
+            }
+          }
+        },
+        {
+          "trace_id": "5eb4fb7c4c23de8bf888bac949d906f0",
+          "span": {
+            "span_id": "24652b476391fa58",
+            "operation": "hipstershop.PaymentService/Charge",
+            "service": "checkoutservice",
+            "start_time_us": 1794850872453484,
+            "duration_us": 76,
+            "duration_ms": 0.076,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 76,
+              "duration_ms": 0.076
+            }
+          }
+        },
+        {
+          "trace_id": "5eb4fb7c4c23de8bf888bac949d906f0",
+          "span": {
+            "span_id": "e84fb103f6d649df",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "checkoutservice",
+            "start_time_us": 1794850872444248,
+            "duration_us": 9346,
+            "duration_ms": 9.346,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 9346,
+              "duration_ms": 9.346
+            }
+          }
+        },
+        {
+          "trace_id": "f24b583edb22fcab09b64f2bfabcba8f",
+          "span": {
+            "span_id": "9959ecb5f5721101",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "frontend",
+            "start_time_us": 1794850846956867,
+            "duration_us": 3138726,
+            "duration_ms": 3138.726,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 3138726,
+              "duration_ms": 3138.726
+            }
+          }
+        },
+        {
+          "trace_id": "f24b583edb22fcab09b64f2bfabcba8f",
+          "span": {
+            "span_id": "3c9adc25a2255182",
+            "operation": "POST",
+            "service": "frontend",
+            "start_time_us": 1794850846955967,
+            "duration_us": 3139985,
+            "duration_ms": 3139.985,
+            "references": 0,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 3139985,
+              "duration_ms": 3139.985
+            }
+          }
+        },
+        {
+          "trace_id": "f24b583edb22fcab09b64f2bfabcba8f",
+          "span": {
+            "span_id": "7920d41bcd6b1a30",
+            "operation": "hipstershop.PaymentService/Charge",
+            "service": "checkoutservice",
+            "start_time_us": 1794850846968699,
+            "duration_us": 3126408,
+            "duration_ms": 3126.408,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 3126408,
+              "duration_ms": 3126.408
+            }
+          }
+        },
+        {
+          "trace_id": "f24b583edb22fcab09b64f2bfabcba8f",
+          "span": {
+            "span_id": "f15f5169f95be0dd",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "checkoutservice",
+            "start_time_us": 1794850846957674,
+            "duration_us": 3137464,
+            "duration_ms": 3137.464,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 3137464,
+              "duration_ms": 3137.464
+            }
+          }
+        },
+        {
+          "trace_id": "f43961022437b3c11f3f5ffdbd0dee83",
+          "span": {
+            "span_id": "e136e428f6e40aed",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "frontend",
+            "start_time_us": 1794850829927517,
+            "duration_us": 17009443,
+            "duration_ms": 17009.443,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 17009443,
+              "duration_ms": 17009.443
+            }
+          }
+        },
+        {
+          "trace_id": "f43961022437b3c11f3f5ffdbd0dee83",
+          "span": {
+            "span_id": "999e540778e2ce19",
+            "operation": "POST",
+            "service": "frontend",
+            "start_time_us": 1794850829733513,
+            "duration_us": 17206450,
+            "duration_ms": 17206.45,
+            "references": 0,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 17206450,
+              "duration_ms": 17206.45
+            }
+          }
+        },
+        {
+          "trace_id": "f43961022437b3c11f3f5ffdbd0dee83",
+          "span": {
+            "span_id": "c6619bc0461305ff",
+            "operation": "hipstershop.PaymentService/Charge",
+            "service": "checkoutservice",
+            "start_time_us": 1794850830090540,
+            "duration_us": 16848078,
+            "duration_ms": 16848.078,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 16848078,
+              "duration_ms": 16848.078
+            }
+          }
+        },
+        {
+          "trace_id": "f43961022437b3c11f3f5ffdbd0dee83",
+          "span": {
+            "span_id": "29e8e92c7f30e47b",
+            "operation": "hipstershop.CheckoutService/PlaceOrder",
+            "service": "checkoutservice",
+            "start_time_us": 1794850829930408,
+            "duration_us": 17009217,
+            "duration_ms": 17009.217,
+            "references": 1,
+            "classification": {
+              "is_error": true,
+              "is_warning": false,
+              "classification": "ERROR",
+              "error_tag": true,
+              "status": "error",
+              "http_status": null,
+              "http_5xx": false,
+              "grpc_status": null,
+              "grpc_error": false,
+              "duration_us": 17009217,
+              "duration_ms": 17009.217
+            }
+          }
+        }
+      ],
+      "warning_spans": [],
+      "trace_error_operations": [
+        {
+          "operation": "hipstershop.CheckoutService/PlaceOrder",
+          "error_count": 6,
+          "candidate_service": "checkoutservice"
+        },
+        {
+          "operation": "POST",
+          "error_count": 3,
+          "candidate_service": null
+        },
+        {
+          "operation": "hipstershop.PaymentService/Charge",
+          "error_count": 3,
+          "candidate_service": "paymentservice"
+        }
+      ],
+      "error_detected": true,
+      "warning_detected": false,
+      "has_trace_data": true
+    },
+    "kubernetes": {
+      "agent": "k8s-agent",
+      "timestamp": "2026-11-16T17:42:13.084024+00:00",
+      "namespace": "default",
+      "service": "currencyservice",
+      "deployment": {
+        "found": true,
+        "desired_replicas": 0,
+        "available_replicas": 0,
+        "ready_replicas": 0,
+        "updated_replicas": 0,
+        "unavailable_replicas": 0
+      },
+      "pods": [],
+      "endpoints": {
+        "found": true,
+        "ready_count": 0,
+        "not_ready_count": 0
+      },
+      "events": [
+        {
+          "type": "Normal",
+          "reason": "SandboxChanged",
+          "message": "Pod sandbox changed, it will be killed and re-created.",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:29+00:00",
+          "last_timestamp": "2026-11-16T17:01:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Pulled",
+          "message": "Container image \"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6\" already present on machine and can be accessed by the pod",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:30+00:00",
+          "last_timestamp": "2026-11-16T17:01:30+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Created",
+          "message": "Container created",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:31+00:00",
+          "last_timestamp": "2026-11-16T17:01:31+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Started",
+          "message": "Container started",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:31+00:00",
+          "last_timestamp": "2026-11-16T17:01:31+00:00",
+          "count": 1
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Readiness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:34+00:00",
+          "last_timestamp": "2026-11-16T17:01:37+00:00",
+          "count": 4
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Liveness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:39+00:00",
+          "last_timestamp": "2026-11-16T17:01:39+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Killing",
+          "message": "Stopping container server",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:03:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "SuccessfulDelete",
+          "message": "Deleted pod: currencyservice-865b7bd584-gmhwt",
+          "object_kind": "ReplicaSet",
+          "object_name": "currencyservice-865b7bd584",
+          "source": "replicaset-controller",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:03:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Scheduled",
+          "message": "Successfully assigned default/currencyservice-865b7bd584-74xnx to minikube",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "default-scheduler",
+          "first_timestamp": "2026-11-16T17:06:10+00:00",
+          "last_timestamp": "2026-11-16T17:06:10+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "SuccessfulCreate",
+          "message": "Created pod: currencyservice-865b7bd584-74xnx",
+          "object_kind": "ReplicaSet",
+          "object_name": "currencyservice-865b7bd584",
+          "source": "replicaset-controller",
+          "first_timestamp": "2026-11-16T17:06:10+00:00",
+          "last_timestamp": "2026-11-16T17:06:10+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "ScalingReplicaSet",
+          "message": "Scaled up replica set currencyservice-865b7bd584 from 0 to 1",
+          "object_kind": "Deployment",
+          "object_name": "currencyservice",
+          "source": "deployment-controller",
+          "first_timestamp": "2026-11-16T17:06:10+00:00",
+          "last_timestamp": "2026-11-16T17:06:10+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Pulled",
+          "message": "Container image \"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6\" already present on machine and can be accessed by the pod",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:06:11+00:00",
+          "last_timestamp": "2026-11-16T17:06:11+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Created",
+          "message": "Container created",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:06:11+00:00",
+          "last_timestamp": "2026-11-16T17:06:11+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Started",
+          "message": "Container started",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:06:11+00:00",
+          "last_timestamp": "2026-11-16T17:06:11+00:00",
+          "count": 1
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Liveness probe failed: timeout: failed to connect service \"10.244.1.38:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:06:22+00:00",
+          "last_timestamp": "2026-11-16T17:06:22+00:00",
+          "count": 1
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Readiness probe failed: timeout: failed to connect service \"10.244.1.38:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:06:12+00:00",
+          "last_timestamp": "2026-11-16T17:06:23+00:00",
+          "count": 3
+        },
+        {
+          "type": "Normal",
+          "reason": "Killing",
+          "message": "Stopping container server",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-74xnx",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:41:47+00:00",
+          "last_timestamp": "2026-11-16T17:41:47+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "SuccessfulDelete",
+          "message": "Deleted pod: currencyservice-865b7bd584-74xnx",
+          "object_kind": "ReplicaSet",
+          "object_name": "currencyservice-865b7bd584",
+          "source": "replicaset-controller",
+          "first_timestamp": "2026-11-16T17:41:47+00:00",
+          "last_timestamp": "2026-11-16T17:41:47+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "ScalingReplicaSet",
+          "message": "Scaled down replica set currencyservice-865b7bd584 from 1 to 0",
+          "object_kind": "Deployment",
+          "object_name": "currencyservice",
+          "source": "deployment-controller",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:41:47+00:00",
+          "count": 2
+        }
+      ],
+      "conditions": [],
+      "status": "WARNING_EVIDENCE",
+      "error_detected": false,
+      "warning_detected": true,
+      "error_count": 0,
+      "warning_count": 4,
+      "scaled_to_zero": true,
+      "no_ready_endpoints": true,
+      "no_ready_replicas": true,
+      "no_pods": true
+    }
+  },
+  "deterministic_findings": {
+    "deterministic_incident_status": "POSSIBLE_INCIDENT",
+    "deterministic_confidence": "MEDIUM",
+    "deterministic_root_cause_candidates": [
+      "checkoutservice",
+      "paymentservice"
+    ],
+    "affected_services": [
+      "checkoutservice",
+      "currencyservice",
+      "frontend"
+    ],
+    "findings": [
+      "Metrics Agent found metric samples but no deterministic degradation anomaly.",
+      "Log Agent has log data but no deterministic error evidence.",
+      "Trace Agent detected distributed-trace error evidence.",
+      "Trace error operation: hipstershop.CheckoutService/PlaceOrder",
+      "Trace error operation: POST",
+      "Trace error operation: hipstershop.PaymentService/Charge",
+      "Kubernetes shows desired replicas = 0 for currencyservice.",
+      "Kubernetes reports zero ready endpoints for currencyservice.",
+      "Kubernetes reports zero ready replicas for currencyservice.",
+      "Kubernetes reports no pods for currencyservice.",
+      "Kubernetes Agent detected Kubernetes warning evidence."
+    ],
+    "warnings": [
+      "A deployment scaled to zero may be intentional fault injection; it is not by itself proof of root cause."
+    ],
+    "cross_agent_correlations": [],
+    "f01_pattern_detected": false,
+    "metric_degradation": false,
+    "log_error_evidence": false,
+    "trace_error_evidence": true,
+    "kubernetes_unavailability": true
+  },
+  "ollama_analysis": {
+    "available": true,
+    "parsed": true,
+    "analysis": {
+      "incident_status": "POSSIBLE_INCIDENT",
+      "root_cause_candidate": "checkoutservice",
+      "confidence": "MEDIUM",
+      "reasoning": [
+        "Trace Agent detected distributed-trace error evidence.",
+        "Kubernetes reports zero ready endpoints for currencyservice.",
+        "Kubernetes reports zero ready replicas for currencyservice.",
+        "Kubernetes reports no pods for currencyservice."
+      ],
+      "supporting_agents": [
+        "trace-agent",
+        "k8s-agent"
+      ],
+      "affected_services": [
+        "checkoutservice",
+        "currencyservice",
+        "frontend"
+      ],
+      "conflicting_or_missing_evidence": [],
+      "next_investigation": [
+        "Investigate checkoutservice for root cause"
+      ]
+    },
+    "raw_response": "{\n  \"incident_status\": \"POSSIBLE_INCIDENT\",\n  \"root_cause_candidate\": \"checkoutservice\",\n  \"confidence\": \"MEDIUM\",\n  \"reasoning\": [\n    \"Trace Agent detected distributed-trace error evidence.\",\n    \"Kubernetes reports zero ready endpoints for currencyservice.\",\n    \"Kubernetes reports zero ready replicas for currencyservice.\",\n    \"Kubernetes reports no pods for currencyservice.\"\n  ],\n  \"supporting_agents\": [\n    \"trace-agent\",\n    \"k8s-agent\"\n  ],\n  \"affected_services\": [\n    \"checkoutservice\",\n    \"currencyservice\",\n    \"frontend\"\n  ],\n  \"conflicting_or_missing_evidence\": [],\n  \"next_investigation\": [\n    \"Investigate checkoutservice for root cause\"\n  ]\n}"
+  }
+}

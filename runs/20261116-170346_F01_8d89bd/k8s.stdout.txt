@@ -1,0 +1,207 @@
+{
+  "agent": "k8s-agent",
+  "version": "1.0",
+  "timestamp": "2026-11-16T17:03:56.997169+00:00",
+  "namespace": "default",
+  "service": "currencyservice",
+  "configuration": {
+    "kubernetes_config_source": "kubeconfig",
+    "event_lookback_minutes": 60,
+    "ollama_model": "llama3.2:latest",
+    "ollama_url": "http://localhost:11434/api/generate"
+  },
+  "deployment": {
+    "found": true,
+    "name": "currencyservice",
+    "desired_replicas": 0,
+    "available_replicas": 0,
+    "ready_replicas": 0,
+    "updated_replicas": 0,
+    "unavailable_replicas": 0,
+    "conditions": [
+      {
+        "type": "Progressing",
+        "status": "True",
+        "reason": "NewReplicaSetAvailable",
+        "message": "ReplicaSet \"currencyservice-865b7bd584\" has successfully progressed.",
+        "last_update_time": "2026-08-22T23:10:42+00:00",
+        "last_transition_time": "2026-08-22T23:10:19+00:00"
+      },
+      {
+        "type": "Available",
+        "status": "True",
+        "reason": "MinimumReplicasAvailable",
+        "message": "Deployment has minimum availability.",
+        "last_update_time": "2026-11-16T17:01:46+00:00",
+        "last_transition_time": "2026-11-16T17:01:46+00:00"
+      }
+    ],
+    "status": "FOUND"
+  },
+  "pods": [],
+  "endpoints": {
+    "found": true,
+    "ready_count": 0,
+    "not_ready_count": 0,
+    "ready": [],
+    "not_ready": [],
+    "status": "FOUND"
+  },
+  "events": [
+    {
+      "type": "Normal",
+      "reason": "SandboxChanged",
+      "message": "Pod sandbox changed, it will be killed and re-created.",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:29+00:00",
+      "last_timestamp": "2026-11-16T17:01:29+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "Pulled",
+      "message": "Container image \"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6\" already present on machine and can be accessed by the pod",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:30+00:00",
+      "last_timestamp": "2026-11-16T17:01:30+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "Created",
+      "message": "Container created",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:31+00:00",
+      "last_timestamp": "2026-11-16T17:01:31+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "Started",
+      "message": "Container started",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:31+00:00",
+      "last_timestamp": "2026-11-16T17:01:31+00:00",
+      "count": 1
+    },
+    {
+      "type": "Warning",
+      "reason": "Unhealthy",
+      "message": "Readiness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:34+00:00",
+      "last_timestamp": "2026-11-16T17:01:37+00:00",
+      "count": 4
+    },
+    {
+      "type": "Warning",
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:01:39+00:00",
+      "last_timestamp": "2026-11-16T17:01:39+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "Killing",
+      "message": "Stopping container server",
+      "object_kind": "Pod",
+      "object_name": "currencyservice-865b7bd584-gmhwt",
+      "source": "kubelet",
+      "first_timestamp": "2026-11-16T17:03:29+00:00",
+      "last_timestamp": "2026-11-16T17:03:29+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "SuccessfulDelete",
+      "message": "Deleted pod: currencyservice-865b7bd584-gmhwt",
+      "object_kind": "ReplicaSet",
+      "object_name": "currencyservice-865b7bd584",
+      "source": "replicaset-controller",
+      "first_timestamp": "2026-11-16T17:03:29+00:00",
+      "last_timestamp": "2026-11-16T17:03:29+00:00",
+      "count": 1
+    },
+    {
+      "type": "Normal",
+      "reason": "ScalingReplicaSet",
+      "message": "Scaled down replica set currencyservice-865b7bd584 from 1 to 0",
+      "object_kind": "Deployment",
+      "object_name": "currencyservice",
+      "source": "deployment-controller",
+      "first_timestamp": "2026-11-16T17:03:29+00:00",
+      "last_timestamp": "2026-11-16T17:03:29+00:00",
+      "count": 1
+    }
+  ],
+  "analysis": {
+    "status": "WARNING_EVIDENCE",
+    "error_detected": false,
+    "warning_detected": true,
+    "findings": [],
+    "warnings": [
+      {
+        "type": "KUBERNETES_EVENT",
+        "severity": "WARNING",
+        "reason": "Unhealthy",
+        "message": "Readiness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+        "object_name": "currencyservice-865b7bd584-gmhwt",
+        "object_kind": "Pod"
+      },
+      {
+        "type": "KUBERNETES_EVENT",
+        "severity": "WARNING",
+        "reason": "Unhealthy",
+        "message": "Liveness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+        "object_name": "currencyservice-865b7bd584-gmhwt",
+        "object_kind": "Pod"
+      }
+    ],
+    "finding_count": 0,
+    "warning_count": 2,
+    "running_pod_count": 0,
+    "ready_pod_count": 0,
+    "total_restart_count": 0,
+    "kubernetes_error_event_count": 0,
+    "kubernetes_warning_event_count": 2
+  },
+  "ollama_analysis": {
+    "available": true,
+    "parsed": true,
+    "analysis": {
+      "summary": "Service currencyservice is not running with zero replicas",
+      "current_state": [],
+      "important_kubernetes_evidence": [
+        "The deployment has desired_replicas set to 0",
+        "The deployment has available_replicas set to 0",
+        "The deployment has ready_replicas set to 0",
+        "The service has no ready endpoints",
+        "The pod summary shows no running pods",
+        "The pod summary shows no ready pods"
+      ],
+      "possible_implications": [
+        "The service may not be running or may be experiencing issues",
+        "Further investigation is required to determine the cause"
+      ],
+      "limitations": [
+        "Cannot conclude the cause of the issue without additional information",
+        "Probe failures and pod restarts are evidence but not the final root cause"
+      ]
+    },
+    "raw_response": "{\n  \"summary\": \"Service currencyservice is not running with zero replicas\",\n  \"evidence\": [\n    \"The deployment has desired_replicas set to 0\",\n    \"The deployment has available_replicas set to 0\",\n    \"The deployment has ready_replicas set to 0\",\n    \"The service has no ready endpoints\",\n    \"The pod summary shows no running pods\",\n    \"The pod summary shows no ready pods\"\n  ],\n  \"implications\": [\n    \"The service may not be running or may be experiencing issues\",\n    \"Further investigation is required to determine the cause\"\n  ],\n  \"limitations\": [\n    \"Cannot conclude the cause of the issue without additional information\",\n    \"Probe failures and pod restarts are evidence but not the final root cause\"\n  ]\n}"
+  }
+}

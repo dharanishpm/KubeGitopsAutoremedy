@@ -1,0 +1,6 @@
+Analyzing logs for service: currencyservice
+Lookback window: 15 minutes
+Querying Loki...
+Loki query: {namespace="default",app="currencyservice"}
+
+ERROR: Unable to communicate with Loki: HTTPConnectionPool(host='localhost', port=3100): Max retries exceeded with url: /loki/api/v1/query_range?query=%7Bnamespace%3D%22default%22%2Capp%3D%22currencyservice%22%7D&start=1794847314165626880&end=1794848214165626880&limit=200&direction=backward (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3100): Failed to establish a new connection: [Errno 61] Connection refused"))

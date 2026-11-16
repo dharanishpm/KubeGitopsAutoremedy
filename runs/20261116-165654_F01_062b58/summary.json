@@ -1,0 +1,53 @@
+{
+  "experiment_id": "20261116-165654_F01_062b58",
+  "fault_id": "F01",
+  "ground_truth_root_cause": "currencyservice",
+  "predicted_root_cause": null,
+  "service": "currencyservice",
+  "trace_service": "frontend",
+  "lookback_minutes": 15,
+  "started_at": "2026-11-16T16:56:54.075955+00:00",
+  "total_wall_seconds": 0.42,
+  "evidence": {
+    "k8s": {
+      "ok": false,
+      "returncode": 1,
+      "duration_s": 0.37,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-165654_F01_062b58/k8s.json"
+    },
+    "logs": {
+      "ok": false,
+      "returncode": 2,
+      "duration_s": 0.11,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-165654_F01_062b58/logs.json"
+    },
+    "metrics": {
+      "ok": false,
+      "returncode": 1,
+      "duration_s": 0.42,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-165654_F01_062b58/metrics.json"
+    },
+    "traces": {
+      "ok": false,
+      "returncode": 2,
+      "duration_s": 0.11,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-165654_F01_062b58/traces.json"
+    }
+  },
+  "timings": {
+    "t_start": 1794848214.0775208,
+    "k8s": 0.37,
+    "logs": 0.11,
+    "metrics": 0.42,
+    "traces": 0.11
+  },
+  "coordinator": {
+    "incident_status": "INSUFFICIENT_EVIDENCE",
+    "note": "All evidence agents failed."
+  },
+  "remediation": null,
+  "approval": null,
+  "validation": null,
+  "git_commit": "a38743a8b5c54a4a33a377fb8357b718d998c374",
+  "python": "3.9.6"
+}

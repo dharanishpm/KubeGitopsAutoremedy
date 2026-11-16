@@ -1,0 +1,2129 @@
+{
+  "service": "frontend",
+  "agent": "trace-agent",
+  "evidence": {
+    "agent": "trace-agent",
+    "timestamp": "2026-10-01T14:09:13.956941+00:00",
+    "service": "frontend",
+    "lookback_minutes": 15,
+    "analysis": {
+      "status": "NORMAL",
+      "total_traces": 50,
+      "total_spans": 50,
+      "error_trace_count": 0,
+      "warning_trace_count": 0,
+      "error_span_count": 0,
+      "warning_span_count": 0,
+      "error_rate": 0.0,
+      "warning_rate": 0.0,
+      "affected_services": [],
+      "affected_operations": [],
+      "span_error_counts_by_service": {},
+      "trace_summaries": [
+        {
+          "trace_id": "6f857c2c608c627f5ec935b00b228f91",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.867,
+          "max_span_duration_ms": 0.867,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "33ffeae04fce98b8",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863738507336,
+              "duration_us": 867,
+              "duration_ms": 0.867,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 867,
+                "duration_ms": 0.867
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "3e7ebba7ad65c1e9d2203f1869478d38",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 5.492,
+          "max_span_duration_ms": 5.492,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "50c1e610015cd975",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863734788752,
+              "duration_us": 5492,
+              "duration_ms": 5.492,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 5492,
+                "duration_ms": 5.492
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "f0c75bc629bf92ab252ec6fcb1ac16a0",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.608,
+          "max_span_duration_ms": 1.608,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "51bf388bdc77bb99",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863733525238,
+              "duration_us": 1608,
+              "duration_ms": 1.608,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1608,
+                "duration_ms": 1.608
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "d3493001bc0d2ef27ed45166e04e8a5d",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.996,
+          "max_span_duration_ms": 0.996,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "76ff461ed8ff15e1",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863729782909,
+              "duration_us": 996,
+              "duration_ms": 0.996,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 996,
+                "duration_ms": 0.996
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "61b02ca9b24aadf07dcf1d33e2f34c98",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.429,
+          "max_span_duration_ms": 0.429,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "a9883513a544c82e",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863728503821,
+              "duration_us": 429,
+              "duration_ms": 0.429,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 429,
+                "duration_ms": 0.429
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "244fd990f963959815d0146d92b3cbbd",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 3.527,
+          "max_span_duration_ms": 3.527,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "92a7355ad2b9beff",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863724782086,
+              "duration_us": 3527,
+              "duration_ms": 3.527,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 3527,
+                "duration_ms": 3.527
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "587189b04fd5766b14a8ceaddc3bf31a",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.464,
+          "max_span_duration_ms": 0.464,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "a38f6a4f7339a1f0",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863719781721,
+              "duration_us": 464,
+              "duration_ms": 0.464,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 464,
+                "duration_ms": 0.464
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "8094a19f165597c9da0b68a4f9289b25",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.742,
+          "max_span_duration_ms": 0.742,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "4b54abd863878922",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863723520069,
+              "duration_us": 742,
+              "duration_ms": 0.742,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 742,
+                "duration_ms": 0.742
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "777ff7dce79e9ac3872e75c14d5108dd",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 2.487,
+          "max_span_duration_ms": 2.487,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "02f16a2ba32f93ea",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863714781141,
+              "duration_us": 2487,
+              "duration_ms": 2.487,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 2487,
+                "duration_ms": 2.487
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "23fe13f5c41a4b62ca3c8bf6b250d845",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.349,
+          "max_span_duration_ms": 0.349,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "2c44e906ec8bd26a",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863718504823,
+              "duration_us": 349,
+              "duration_ms": 0.349,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 349,
+                "duration_ms": 0.349
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "20c7c48c8e926b79381c5070196be697",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.876,
+          "max_span_duration_ms": 0.876,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "79fb8c389f550c1d",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863709779030,
+              "duration_us": 876,
+              "duration_ms": 0.876,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 876,
+                "duration_ms": 0.876
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "8e3eb2e7c236229b9f8a20252ca4036f",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.871,
+          "max_span_duration_ms": 0.871,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "a351d94e6a693151",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863713521915,
+              "duration_us": 871,
+              "duration_ms": 0.871,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 871,
+                "duration_ms": 0.871
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "be29001fb7990914a912fae1a6e1098a",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.31,
+          "max_span_duration_ms": 0.31,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "c6d1f0e712e3960d",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863708505186,
+              "duration_us": 310,
+              "duration_ms": 0.31,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 310,
+                "duration_ms": 0.31
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "aff2211a365d86a6085bce8a6abe0025",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.397,
+          "max_span_duration_ms": 1.397,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "6b43940920f71b3e",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863704777275,
+              "duration_us": 1397,
+              "duration_ms": 1.397,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1397,
+                "duration_ms": 1.397
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "2b83e6588a35b9fdb063ef545da00a6e",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 4.168,
+          "max_span_duration_ms": 4.168,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "537d0af848f53d1d",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863699779174,
+              "duration_us": 4168,
+              "duration_ms": 4.168,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 4168,
+                "duration_ms": 4.168
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "209cce6b6a0ecc39bcda5582f019178c",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 2.028,
+          "max_span_duration_ms": 2.028,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "cde6fda295c0baff",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863703529342,
+              "duration_us": 2028,
+              "duration_ms": 2.028,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 2028,
+                "duration_ms": 2.028
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "58cb94b1087d5612cf186cdfffd960e0",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.678,
+          "max_span_duration_ms": 0.678,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "f72ddff7038305b6",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863698506089,
+              "duration_us": 678,
+              "duration_ms": 0.678,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 678,
+                "duration_ms": 0.678
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "3a4e74bc034b082ec20ebb1559d8d9f3",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.376,
+          "max_span_duration_ms": 1.376,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "d8e178b5ef1a74c9",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863694778244,
+              "duration_us": 1376,
+              "duration_ms": 1.376,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1376,
+                "duration_ms": 1.376
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "b30b69bc23546a98c7209d6e7e663f1c",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.842,
+          "max_span_duration_ms": 1.842,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "6c75c629ecff2168",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863693537733,
+              "duration_us": 1842,
+              "duration_ms": 1.842,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1842,
+                "duration_ms": 1.842
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "dfb1893c9980fdfdfbfdc9f29e47baa0",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 2.153,
+          "max_span_duration_ms": 2.153,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "dabcc913ee54693f",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863689774480,
+              "duration_us": 2153,
+              "duration_ms": 2.153,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 2153,
+                "duration_ms": 2.153
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "5ea7e8634add5666f788dff3c8dbe9c3",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.873,
+          "max_span_duration_ms": 0.873,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "c9d626dfe8e79b2f",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863688506415,
+              "duration_us": 873,
+              "duration_ms": 0.873,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 873,
+                "duration_ms": 0.873
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "0099b81175eca22fb45532f03b96715f",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 2.062,
+          "max_span_duration_ms": 2.062,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "c37b2857f520233a",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863684771813,
+              "duration_us": 2062,
+              "duration_ms": 2.062,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 2062,
+                "duration_ms": 2.062
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "a7efe65a2c669befc3c0472289d55ba4",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.801,
+          "max_span_duration_ms": 0.801,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "9b6580bae8173175",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863679770213,
+              "duration_us": 801,
+              "duration_ms": 0.801,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 801,
+                "duration_ms": 0.801
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "e7b0628abdac0707384ed43e61c8468d",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.231,
+          "max_span_duration_ms": 0.231,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "9ae647524a2952a3",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863683519232,
+              "duration_us": 231,
+              "duration_ms": 0.231,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 231,
+                "duration_ms": 0.231
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "b45c3512fea00e45a071b314262668b5",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.998,
+          "max_span_duration_ms": 1.998,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "95ee2ed137a57722",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863674766942,
+              "duration_us": 1998,
+              "duration_ms": 1.998,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1998,
+                "duration_ms": 1.998
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "5be53876b72c583d89767920e31d06c9",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.507,
+          "max_span_duration_ms": 0.507,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "8cc93e47193a7d1b",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863678504574,
+              "duration_us": 507,
+              "duration_ms": 0.507,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 507,
+                "duration_ms": 0.507
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "5ac4d0fb4f62352f93da06d9614471a5",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.73,
+          "max_span_duration_ms": 1.73,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "e92ddd877621caf9",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863669762985,
+              "duration_us": 1730,
+              "duration_ms": 1.73,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1730,
+                "duration_ms": 1.73
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "9959b00f11e5dfabb4ecf1f2daa3e9bd",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.538,
+          "max_span_duration_ms": 0.538,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "84aaedcea515e7e0",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863673521710,
+              "duration_us": 538,
+              "duration_ms": 0.538,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 538,
+                "duration_ms": 0.538
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "4da23f25e343ef616aadcf12fa2e0e76",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.555,
+          "max_span_duration_ms": 0.555,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "40c53fe8c6ba35f5",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863668505345,
+              "duration_us": 555,
+              "duration_ms": 0.555,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 555,
+                "duration_ms": 0.555
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "d425205aec0a80be9c917376cc50437d",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.859,
+          "max_span_duration_ms": 0.859,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "4ad13a5cb59fc602",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863664761799,
+              "duration_us": 859,
+              "duration_ms": 0.859,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 859,
+                "duration_ms": 0.859
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "799176bcb6297e4cf1f2a02ae979822f",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.838,
+          "max_span_duration_ms": 0.838,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "3f24f2e3b9fc70bf",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863663519988,
+              "duration_us": 838,
+              "duration_ms": 0.838,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 838,
+                "duration_ms": 0.838
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "b1396eec17c15e66bed81479f4d21f47",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 2.295,
+          "max_span_duration_ms": 2.295,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "67953a54a159bb6d",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863659760804,
+              "duration_us": 2295,
+              "duration_ms": 2.295,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 2295,
+                "duration_ms": 2.295
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "00a1af355e19ec329d9b222c686de183",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.508,
+          "max_span_duration_ms": 0.508,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "5ded46d7d46c8fe5",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863658505675,
+              "duration_us": 508,
+              "duration_ms": 0.508,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 508,
+                "duration_ms": 0.508
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "37e8e95743035dafb0c27474a15966e3",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.437,
+          "max_span_duration_ms": 0.437,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "3b2c0459f820f5da",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863654757914,
+              "duration_us": 437,
+              "duration_ms": 0.437,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 437,
+                "duration_ms": 0.437
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "671fbc80b9be06a79c3064ef7ae84bde",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.507,
+          "max_span_duration_ms": 0.507,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "0de1d3945ff2a1ca",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863653518796,
+              "duration_us": 507,
+              "duration_ms": 0.507,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 507,
+                "duration_ms": 0.507
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "1d87b90c05f3a5754d1dc07cdd55a650",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.957,
+          "max_span_duration_ms": 1.957,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "32fea3d70713ab2c",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863649757274,
+              "duration_us": 1957,
+              "duration_ms": 1.957,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1957,
+                "duration_ms": 1.957
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "7dbc2fa84580722ca87b21619f6d156e",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.466,
+          "max_span_duration_ms": 0.466,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "d3470ed7c0474bbc",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863648503536,
+              "duration_us": 466,
+              "duration_ms": 0.466,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 466,
+                "duration_ms": 0.466
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "e18d28c0b91da6860cd70828a1d59505",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.904,
+          "max_span_duration_ms": 0.904,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "8bc329dff1ecb5ff",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863644756550,
+              "duration_us": 904,
+              "duration_ms": 0.904,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 904,
+                "duration_ms": 0.904
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "ae812c8f419fd0635d1b5964d7e375ce",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.817,
+          "max_span_duration_ms": 0.817,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "eba1297a56fb796d",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863639754062,
+              "duration_us": 817,
+              "duration_ms": 0.817,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 817,
+                "duration_ms": 0.817
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "15e32608d4324ae3faf3d1fe704e4ed1",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.575,
+          "max_span_duration_ms": 0.575,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "9d6e218160d17615",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863643520451,
+              "duration_us": 575,
+              "duration_ms": 0.575,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 575,
+                "duration_ms": 0.575
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "3d8965f12302d573c326a49cb712fdf2",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.287,
+          "max_span_duration_ms": 0.287,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "4c80a02d03f8acac",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863638503713,
+              "duration_us": 287,
+              "duration_ms": 0.287,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 287,
+                "duration_ms": 0.287
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "c1c3fa2c53954eec285a3fbf826964e7",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.565,
+          "max_span_duration_ms": 0.565,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "3bff69d49ab0f045",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863634752978,
+              "duration_us": 565,
+              "duration_ms": 0.565,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 565,
+                "duration_ms": 0.565
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "2d2d031da54bcbdc4efe77547f7d3fd6",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 1.059,
+          "max_span_duration_ms": 1.059,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "f5ff939bb47c41c3",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863629752048,
+              "duration_us": 1059,
+              "duration_ms": 1.059,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 1059,
+                "duration_ms": 1.059
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "552432fa1a72658889057a9bbf285102",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.744,
+          "max_span_duration_ms": 0.744,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "490a7e9ee9141fd2",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863633519260,
+              "duration_us": 744,
+              "duration_ms": 0.744,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 744,
+                "duration_ms": 0.744
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "508761b185c0aee68473fc09070dbb94",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.905,
+          "max_span_duration_ms": 0.905,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "9815484289a8376b",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863628504913,
+              "duration_us": 905,
+              "duration_ms": 0.905,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 905,
+                "duration_ms": 0.905
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "9aed7ac5e18dcb3b713bc9c7383906f5",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.982,
+          "max_span_duration_ms": 0.982,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "67a055b2c0de28ce",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863624751320,
+              "duration_us": 982,
+              "duration_ms": 0.982,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 982,
+                "duration_ms": 0.982
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "5ebd3912c4679d8db74df5192185a77a",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.623,
+          "max_span_duration_ms": 0.623,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "b711bb5fba39dd32",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863623519966,
+              "duration_us": 623,
+              "duration_ms": 0.623,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 623,
+                "duration_ms": 0.623
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "9214240fbddbb445b8841051f369f194",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.488,
+          "max_span_duration_ms": 0.488,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "288f1c41f01346b9",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863619749769,
+              "duration_us": 488,
+              "duration_ms": 0.488,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 488,
+                "duration_ms": 0.488
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "c20373859a9a85cc1835eb4c80ad27c3",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "GET": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.117,
+          "max_span_duration_ms": 0.117,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "4df4491a38e9ba6a",
+              "operation": "GET",
+              "service": "frontend",
+              "start_time_us": 1790863618503225,
+              "duration_us": 117,
+              "duration_ms": 0.117,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 117,
+                "duration_ms": 0.117
+              }
+            }
+          ]
+        },
+        {
+          "trace_id": "efd53f7889df688898deaabb27ad102c",
+          "span_count": 1,
+          "service_count": 1,
+          "services": [
+            "frontend"
+          ],
+          "operations": {
+            "opentelemetry.proto.collector.trace.v1.TraceService/Export": 1
+          },
+          "error_span_count": 0,
+          "warning_span_count": 0,
+          "total_span_duration_ms": 0.593,
+          "max_span_duration_ms": 0.593,
+          "status": "NORMAL",
+          "error_spans": [],
+          "warning_spans": [],
+          "spans": [
+            {
+              "span_id": "3afe49933ec5f1d4",
+              "operation": "opentelemetry.proto.collector.trace.v1.TraceService/Export",
+              "service": "frontend",
+              "start_time_us": 1790863614749052,
+              "duration_us": 593,
+              "duration_ms": 0.593,
+              "references": 0,
+              "classification": {
+                "is_error": false,
+                "is_warning": false,
+                "classification": "NORMAL",
+                "error_tag": null,
+                "status": "",
+                "http_status": null,
+                "http_5xx": false,
+                "grpc_status": null,
+                "grpc_error": false,
+                "duration_us": 593,
+                "duration_ms": 0.593
+              }
+            }
+          ]
+        }
+      ],
+      "error_spans": [],
+      "warning_spans": []
+    }
+  },
+  "ollama_analysis": "Based on the provided deterministic distributed-trace evidence, here is a concise report:\n\n**Overall Trace Status**\nThe overall trace status for the frontend service is NORMAL.\n\n**Observed Errors**\nNo error evidence was detected.\n\n**Observed Warnings**\nNo warning evidence was detected.\n\n**Affected Services**\nNone\n\n**Affected Operations**\nNone\n\n**RCA Implications**\nNo error evidence was available to support any Root Cause Analysis (RCA) implications."
+}

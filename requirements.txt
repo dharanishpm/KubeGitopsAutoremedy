@@ -3,3 +3,5 @@ requests>=2.32.0
 pydantic>=2.10.0
 python-dotenv>=1.0.1
 prometheus-api-client>=0.5.7
+langgraph 
+langchain-ollama

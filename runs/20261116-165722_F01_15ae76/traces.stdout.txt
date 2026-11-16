@@ -1,0 +1,5 @@
+Analyzing traces for service: frontend
+Lookback window: 15 minutes
+Querying Jaeger...
+
+ERROR: Unable to communicate with Jaeger: HTTPConnectionPool(host='localhost', port=16686): Max retries exceeded with url: /api/traces?service=frontend&start=1794847342634982&end=1794848242634982&limit=50 (Caused by NewConnectionError("HTTPConnection(host='localhost', port=16686): Failed to establish a new connection: [Errno 61] Connection refused"))

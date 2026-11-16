@@ -1,0 +1,63 @@
+{
+  "experiment_id": "20261116-170346_F01_8d89bd",
+  "fault_id": "F01",
+  "ground_truth_root_cause": "currencyservice",
+  "predicted_root_cause": "currencyservice",
+  "service": "currencyservice",
+  "trace_service": "frontend",
+  "lookback_minutes": 15,
+  "started_at": "2026-11-16T17:03:46.532473+00:00",
+  "total_wall_seconds": 21.24,
+  "evidence": {
+    "k8s": {
+      "ok": true,
+      "returncode": 0,
+      "duration_s": 10.53,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/k8s.json"
+    },
+    "logs": {
+      "ok": false,
+      "returncode": 2,
+      "duration_s": 0.12,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/logs.json"
+    },
+    "metrics": {
+      "ok": false,
+      "returncode": 1,
+      "duration_s": 0.45,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/metrics.json"
+    },
+    "traces": {
+      "ok": false,
+      "returncode": 2,
+      "duration_s": 0.12,
+      "file": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/traces.json"
+    }
+  },
+  "timings": {
+    "t_start": 1794848626.5340009,
+    "k8s": 10.53,
+    "logs": 0.12,
+    "metrics": 0.45,
+    "traces": 0.12,
+    "coordinator": 10.7
+  },
+  "coordinator": {
+    "incident_status": "POSSIBLE_INCIDENT",
+    "root_cause_candidate": "currencyservice",
+    "confidence": "MEDIUM",
+    "affected_services": [
+      "currencyservice"
+    ],
+    "deterministic_incident_status": "NO_CONFIRMED_INCIDENT",
+    "deterministic_root_cause_candidates": [],
+    "deterministic_confidence": "NONE",
+    "ok": true,
+    "duration_s": 10.7
+  },
+  "remediation": null,
+  "approval": null,
+  "validation": null,
+  "git_commit": "a38743a8b5c54a4a33a377fb8357b718d998c374",
+  "python": "3.9.6"
+}

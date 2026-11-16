@@ -1,0 +1,6 @@
+
+Analyzing service: currencyservice
+Collecting current metrics...
+
+Metrics Agent ERROR:
+HTTPConnectionPool(host='localhost', port=9090): Max retries exceeded with url: /api/v1/query?query=%0A++++++++sum+by+%28pod%29+%28%0A++++++++++++rate%28%0A++++++++++++++++container_cpu_usage_seconds_total%7B%0A++++++++++++++++++++namespace%3D%22default%22%2C%0A++++++++++++++++++++pod%3D~%22currencyservice.%2A%22%0A++++++++++++++++%7D%5B5m%5D%0A++++++++++++%29%0A++++++++%29%0A++++++++ (Caused by NewConnectionError("HTTPConnection(host='localhost', port=9090): Failed to establish a new connection: [Errno 61] Connection refused"))

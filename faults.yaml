@@ -1,0 +1,6 @@
+F01:
+  description: CurrencyService scaled to zero
+  fault_type: service_unavailable
+  target_service: currencyservice
+  symptom_service: frontend
+  ground_truth_root_cause: currencyservice

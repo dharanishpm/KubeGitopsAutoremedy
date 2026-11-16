@@ -1,14 +1,30 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-CLUSTER_NAME="${CLUSTER_NAME:-autoremedy}"
-CPUS="${CPUS:-4}"
-MEMORY="${MEMORY:-8192}"
+set -e
+
+echo "======================================"
+echo "Starting AutoRemedy Minikube Cluster"
+echo "======================================"
 
 minikube start \
-  --profile "${CLUSTER_NAME}" \
-  --cpus "${CPUS}" \
-  --memory "${MEMORY}" \
-  --driver=docker
+  --driver=docker \
+  --cpus=4 \
+  --memory=7168 \
+  --disk-size=40g
 
-kubectl apply -f "$(dirname "$0")/namespace.yaml"
+echo ""
+echo "======================================"
+echo "Cluster Status"
+echo "======================================"
+
+kubectl get nodes
+
+echo ""
+echo "======================================"
+echo "Cluster Information"
+echo "======================================"
+
+kubectl cluster-info
+
+echo ""
+echo "AutoRemedy Minikube cluster started."

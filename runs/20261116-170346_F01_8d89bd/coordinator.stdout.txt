@@ -1,0 +1,270 @@
+{
+  "version": "V2",
+  "agent": "coordinator",
+  "timestamp": "2026-11-16T17:04:07.738352+00:00",
+  "ollama": {
+    "url": "http://localhost:11434/api/generate",
+    "model": "llama3.2:latest",
+    "temperature": 0
+  },
+  "input_files": {
+    "metrics": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/metrics.json",
+    "logs": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/logs.json",
+    "trace": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/traces.json",
+    "k8s": "/Users/dharanish/Documents/RICProject/AutoremedyRIC/runs/20261116-170346_F01_8d89bd/k8s.json"
+  },
+  "structured_agent_evidence": {
+    "metrics": {
+      "agent": "metrics",
+      "timestamp": null,
+      "namespace": null,
+      "service": "currencyservice",
+      "baseline": {
+        "created_at": null,
+        "duration_minutes": null,
+        "sigma_multiplier": null
+      },
+      "current_metrics": {},
+      "comparisons": [],
+      "statistical_deviations": [],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "statistical_deviation_count": 0,
+      "anomaly_detected": false,
+      "metric_sample_count": 0,
+      "has_metric_data": false
+    },
+    "logs": {
+      "agent": "logs",
+      "timestamp": null,
+      "namespace": null,
+      "service": "currencyservice",
+      "lookback_minutes": null,
+      "query": null,
+      "status": "UNKNOWN",
+      "total_log_entries": 0,
+      "normal_log_entries": 0,
+      "warning_log_entries": 0,
+      "error_log_entries": 0,
+      "error_rate": null,
+      "warning_rate": null,
+      "affected_pods": [],
+      "severity_counts": {},
+      "error_detected": false,
+      "warning_detected": false,
+      "error_entries": [],
+      "warning_entries": [],
+      "has_log_data": false
+    },
+    "trace": {
+      "agent": "traces",
+      "timestamp": null,
+      "namespace": null,
+      "service": "frontend",
+      "lookback_minutes": null,
+      "status": "UNKNOWN",
+      "total_traces": 0,
+      "total_spans": 0,
+      "error_trace_count": 0,
+      "error_span_count": 0,
+      "error_rate": null,
+      "affected_services": [],
+      "affected_operations": [],
+      "error_spans": [],
+      "warning_spans": [],
+      "trace_error_operations": [],
+      "error_detected": false,
+      "warning_detected": false,
+      "has_trace_data": false
+    },
+    "kubernetes": {
+      "agent": "k8s-agent",
+      "timestamp": "2026-11-16T17:03:56.997169+00:00",
+      "namespace": "default",
+      "service": "currencyservice",
+      "deployment": {
+        "found": true,
+        "desired_replicas": 0,
+        "available_replicas": 0,
+        "ready_replicas": 0,
+        "updated_replicas": 0,
+        "unavailable_replicas": 0
+      },
+      "pods": [],
+      "endpoints": {
+        "found": true,
+        "ready_count": 0,
+        "not_ready_count": 0
+      },
+      "events": [
+        {
+          "type": "Normal",
+          "reason": "SandboxChanged",
+          "message": "Pod sandbox changed, it will be killed and re-created.",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:29+00:00",
+          "last_timestamp": "2026-11-16T17:01:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Pulled",
+          "message": "Container image \"us-central1-docker.pkg.dev/online-boutique-ci/microservices-demo/currencyservice:v0.10.6\" already present on machine and can be accessed by the pod",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:30+00:00",
+          "last_timestamp": "2026-11-16T17:01:30+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Created",
+          "message": "Container created",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:31+00:00",
+          "last_timestamp": "2026-11-16T17:01:31+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Started",
+          "message": "Container started",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:31+00:00",
+          "last_timestamp": "2026-11-16T17:01:31+00:00",
+          "count": 1
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Readiness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:34+00:00",
+          "last_timestamp": "2026-11-16T17:01:37+00:00",
+          "count": 4
+        },
+        {
+          "type": "Warning",
+          "reason": "Unhealthy",
+          "message": "Liveness probe failed: timeout: failed to connect service \"10.244.1.35:7000\" within 1s: context deadline exceeded",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:01:39+00:00",
+          "last_timestamp": "2026-11-16T17:01:39+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "Killing",
+          "message": "Stopping container server",
+          "object_kind": "Pod",
+          "object_name": "currencyservice-865b7bd584-gmhwt",
+          "source": "kubelet",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:03:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "SuccessfulDelete",
+          "message": "Deleted pod: currencyservice-865b7bd584-gmhwt",
+          "object_kind": "ReplicaSet",
+          "object_name": "currencyservice-865b7bd584",
+          "source": "replicaset-controller",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:03:29+00:00",
+          "count": 1
+        },
+        {
+          "type": "Normal",
+          "reason": "ScalingReplicaSet",
+          "message": "Scaled down replica set currencyservice-865b7bd584 from 1 to 0",
+          "object_kind": "Deployment",
+          "object_name": "currencyservice",
+          "source": "deployment-controller",
+          "first_timestamp": "2026-11-16T17:03:29+00:00",
+          "last_timestamp": "2026-11-16T17:03:29+00:00",
+          "count": 1
+        }
+      ],
+      "conditions": [],
+      "status": "WARNING_EVIDENCE",
+      "error_detected": false,
+      "warning_detected": true,
+      "error_count": 0,
+      "warning_count": 2,
+      "scaled_to_zero": true,
+      "no_ready_endpoints": true,
+      "no_ready_replicas": true,
+      "no_pods": true
+    }
+  },
+  "deterministic_findings": {
+    "deterministic_incident_status": "NO_CONFIRMED_INCIDENT",
+    "deterministic_confidence": "NONE",
+    "deterministic_root_cause_candidates": [],
+    "affected_services": [
+      "currencyservice"
+    ],
+    "findings": [
+      "Kubernetes shows desired replicas = 0 for currencyservice.",
+      "Kubernetes reports zero ready endpoints for currencyservice.",
+      "Kubernetes reports zero ready replicas for currencyservice.",
+      "Kubernetes reports no pods for currencyservice.",
+      "Kubernetes Agent detected Kubernetes warning evidence."
+    ],
+    "warnings": [
+      "Metrics Agent has no current metric samples for the requested service/window.",
+      "Log Agent did not provide usable log evidence.",
+      "Trace Agent has no usable trace evidence.",
+      "A deployment scaled to zero may be intentional fault injection; it is not by itself proof of root cause."
+    ],
+    "cross_agent_correlations": [],
+    "f01_pattern_detected": false,
+    "metric_degradation": false,
+    "log_error_evidence": false,
+    "trace_error_evidence": false,
+    "kubernetes_unavailability": true
+  },
+  "ollama_analysis": {
+    "available": true,
+    "parsed": true,
+    "analysis": {
+      "incident_status": "POSSIBLE_INCIDENT",
+      "root_cause_candidate": "currencyservice",
+      "confidence": "MEDIUM",
+      "reasoning": [
+        "Kubernetes reports zero ready endpoints for currencyservice.",
+        "Kubernetes reports zero ready replicas for currencyservice.",
+        "Kubernetes reports no pods for currencyservice.",
+        "A deployment scaled to zero may be intentional fault injection; it is not by itself proof of root cause."
+      ],
+      "supporting_agents": [
+        "k8s-agent",
+        "kubernetes"
+      ],
+      "affected_services": [
+        "currencyservice"
+      ],
+      "conflicting_or_missing_evidence": [
+        "Metrics Agent has no current metric samples for the requested service/window.",
+        "Log Agent did not provide usable log evidence.",
+        "Trace Agent has no usable trace evidence."
+      ],
+      "next_investigation": [
+        "Investigate if the deployment scaling to zero is intentional fault injection and not a root cause."
+      ]
+    },
+    "raw_response": "{\n  \"incident_status\": \"POSSIBLE_INCIDENT\",\n  \"root_cause_candidate\": \"currencyservice\",\n  \"confidence\": \"MEDIUM\",\n  \"reasoning\": [\n    \"Kubernetes reports zero ready endpoints for currencyservice.\",\n    \"Kubernetes reports zero ready replicas for currencyservice.\",\n    \"Kubernetes reports no pods for currencyservice.\",\n    \"A deployment scaled to zero may be intentional fault injection; it is not by itself proof of root cause.\"\n  ],\n  \"supporting_agents\": [\n    \"k8s-agent\",\n    \"kubernetes\"\n  ],\n  \"affected_services\": [\n    \"currencyservice\"\n  ],\n  \"conflicting_or_missing_evidence\": [\n    \"Metrics Agent has no current metric samples for the requested service/window.\",\n    \"Log Agent did not provide usable log evidence.\",\n    \"Trace Agent has no usable trace evidence.\"\n  ],\n  \"next_investigation\": [\n    \"Investigate if the deployment scaling to zero is intentional fault injection and not a root cause.\"\n  ]\n}"
+  }
+}

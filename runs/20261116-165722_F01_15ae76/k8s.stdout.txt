@@ -1,0 +1,6 @@
+{
+  "agent": "k8s-agent",
+  "version": "1.0",
+  "status": "ERROR",
+  "error": "HTTPSConnectionPool(host='127.0.0.1', port=54409): Max retries exceeded with url: /apis/apps/v1/namespaces/default/deployments/currencyservice (Caused by NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=54409): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+}

@@ -1,0 +1,80 @@
+
+{
+  "service": "currencyservice",
+  "agent": "metrics-agent",
+  "evidence": {
+    "agent": "metrics-agent",
+    "timestamp": "2026-10-01T14:08:14.747915+00:00",
+    "namespace": "default",
+    "service": "currencyservice",
+    "baseline": {
+      "created_at": "2026-09-09T20:50:55.364146+00:00",
+      "duration_minutes": 30,
+      "sigma_multiplier": 3
+    },
+    "current_metrics": {
+      "cpu_usage_cores": [
+        {
+          "pod": "currencyservice-865b7bd584-9l4cd",
+          "value": 0.02034576785714286
+        }
+      ],
+      "memory_usage_bytes": [],
+      "pod_restarts_15m": [
+        {
+          "pod": "currencyservice-865b7bd584-9l4cd",
+          "value": 1.0481431367293377
+        }
+      ],
+      "cpu_throttling_percentage": [
+        {
+          "pod": "currencyservice-865b7bd584-9l4cd",
+          "value": 56.1904761904762
+        }
+      ]
+    },
+    "analysis": {
+      "service": "currencyservice",
+      "comparisons": [
+        {
+          "metric": "cpu_usage_cores",
+          "current_value": 0.02034576785714286,
+          "baseline_mean": 0.025186564011357722,
+          "baseline_stddev": 0.015877648491216523,
+          "lower_bound": 0.0,
+          "upper_bound": 0.07281950948500729,
+          "deviation_from_mean": -0.004840796154214861,
+          "z_score": -0.3048811766359973,
+          "direction": "within_baseline",
+          "statistical_deviation": false,
+          "degradation_anomaly": false,
+          "anomalous": false,
+          "status": "NORMAL",
+          "pod": "currencyservice-865b7bd584-9l4cd"
+        },
+        {
+          "metric": "cpu_throttling_percentage",
+          "current_value": 56.1904761904762,
+          "baseline_mean": 46.569001416000134,
+          "baseline_stddev": 26.459369701230543,
+          "lower_bound": 0.0,
+          "upper_bound": 125.94711051969176,
+          "deviation_from_mean": 9.621474774476063,
+          "z_score": 0.363632047290552,
+          "direction": "within_baseline",
+          "statistical_deviation": false,
+          "degradation_anomaly": false,
+          "anomalous": false,
+          "status": "NORMAL",
+          "pod": "currencyservice-865b7bd584-9l4cd"
+        }
+      ],
+      "statistical_deviations": [],
+      "statistical_deviation_count": 0,
+      "anomalies": [],
+      "anomaly_count": 0,
+      "anomaly_detected": false
+    }
+  },
+  "ollama_analysis": "**Overall Metric Status**\n\nThe current metrics analysis indicates that the \"currencyservice\" is operating within its baseline parameters. There are no indications of degradation or unusual statistical behavior.\n\n**Statistical Deviations**\n\nNo statistical deviations are detected in the current metrics analysis. The \"statistical_deviations\" field is empty, and the \"statistical_deviation_count\" is 0.\n\n**Degradation Anomalies**\n\nNo degradation anomalies are detected in the current metrics analysis. The \"degradation_anomaly\" field is false for all metrics, and there are no indications of unusual behavior that would suggest degradation.\n\n**Affected Pods**\n\nOnly one pod, \"currencyservice-865b7bd584-9l4cd\", is affected by the current metrics analysis. The pod has experienced a restart count greater than zero, which is a degradation anomaly candidate.\n\n**RCA Implications**\n\nThe metrics analysis does not currently provide evidence of metric-based degradation. Further evidence from logs, traces, and Kubernetes context may be required to determine the root cause of any potential issues. No remediation recommendations can be made based solely on the metrics analysis."
+}
