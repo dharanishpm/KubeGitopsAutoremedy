@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-AutoRemedyRIC - Kubernetes Context Agent V1
+AutoRemedyRIC - Kubernetes Context Agent V1.1
 
 Responsibilities:
     - Collect Kubernetes deployment state
@@ -733,14 +733,27 @@ def analyse_kubernetes_state(
     # DEPLOYMENT
     # ========================================================================
 
-    # A deliberate scale-to-zero is not automatically an error.
-    #
-    # This is important for controlled fault injection experiments.
-    #
-    # If desired replicas > 0, however, unavailable/ready state becomes
-    # actionable Kubernetes evidence.
+    # v1.1: zero desired replicas is reported as factual availability
+    # evidence (the Service cannot serve requests). Whether it is the root
+    # cause is decided by the Coordinator, not here.
 
     if (
+        deployment.get("found", False)
+        and desired == 0
+    ):
+
+        findings.append({
+            "type": "SCALED_TO_ZERO",
+            "severity": "ERROR",
+            "message": (
+                "Deployment has zero desired replicas; "
+                "no pods can serve requests."
+            ),
+            "desired": desired,
+            "available": available
+        })
+
+    elif (
         desired is not None
         and desired > 0
     ):
@@ -798,8 +811,7 @@ def analyse_kubernetes_state(
     )
 
     if (
-        desired is not None
-        and desired > 0
+        endpoints.get("found", False)
         and ready_endpoint_count == 0
     ):
 
@@ -807,9 +819,9 @@ def analyse_kubernetes_state(
             "type": "NO_READY_ENDPOINTS",
             "severity": "ERROR",
             "message": (
-                "Service has no ready endpoints while "
-                "the deployment requires replicas."
-            )
+                "Service exists but has no ready endpoints."
+            ),
+            "not_ready_count": not_ready_endpoint_count
         })
 
     elif not_ready_endpoint_count > 0:
@@ -1240,13 +1252,15 @@ IMPORTANT:
 
 1. The deterministic analysis is authoritative.
 
-2. desired_replicas = 0 is NOT automatically an error.
+2. A SCALED_TO_ZERO finding means the deployment has zero
+   desired replicas, so the service cannot serve requests.
+   This is a factual availability observation.
 
-3. A deployment can intentionally be scaled to zero during
-   a controlled fault-injection experiment.
+3. Do not speculate about why the deployment has zero
+   replicas.
 
-4. Do not claim that zero replicas alone proves an
-   unexpected failure.
+4. Zero replicas alone is NOT proof of the root cause.
+   The Coordinator decides the root cause.
 
 5. No ready endpoints is a factual Kubernetes observation.
 
@@ -1621,7 +1635,7 @@ def run_agent(
 
     return {
         "agent": "k8s-agent",
-        "version": "1.0",
+        "version": "1.1",
         "timestamp": utc_now().isoformat(),
         "namespace": NAMESPACE,
         "service": service,
@@ -1714,7 +1728,7 @@ def main():
             json.dumps(
                 {
                     "agent": "k8s-agent",
-                    "version": "1.0",
+                    "version": "1.1",
                     "status": "ERROR",
                     "error": str(exc)
                 },
