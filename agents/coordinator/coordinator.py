@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-AutoRemedyRIC - Coordinator Agent V2
+AutoRemedyRIC - Coordinator Agent V2.1
 
 Purpose:
     Fuse deterministic evidence from:
@@ -364,6 +364,104 @@ def extract_trace_error_operations(
     return operations
 
 
+def extract_error_span_edges(
+    analysis: Dict[str, Any],
+    error_spans: List[Any]
+) -> List[Dict[str, Any]]:
+    """
+    Collect one edge per error span:
+        emitter = service that recorded the span
+        callee  = service parsed from the RPC operation name
+
+    Spans are read from trace_summaries[].error_spans (Trace Agent V1)
+    and from top-level error_spans if present.
+    """
+
+    spans: List[Any] = list(error_spans)
+
+    for summary in safe_list(analysis.get("trace_summaries")):
+        if isinstance(summary, dict):
+            spans.extend(safe_list(summary.get("error_spans")))
+
+    edges: List[Dict[str, Any]] = []
+    seen = set()
+
+    for span in spans:
+        if not isinstance(span, dict):
+            continue
+
+        span_id = span.get("span_id")
+
+        if span_id and span_id in seen:
+            continue
+
+        if span_id:
+            seen.add(span_id)
+
+        operation = first_non_empty(
+            span.get("operation"),
+            span.get("name")
+        )
+
+        emitter = service_name_normalize(span.get("service"))
+        callee = extract_service_from_operation(operation)
+
+        if emitter or callee:
+            edges.append({
+                "emitter": emitter,
+                "callee": callee,
+                "operation": operation,
+            })
+
+    return edges
+
+
+def rank_candidates_by_propagation(
+    candidates: List[str],
+    edges: List[Dict[str, Any]],
+    error_counts: Dict[str, int],
+) -> Tuple[List[str], List[str]]:
+    """
+    Rank trace candidates so that services which only propagate a
+    downstream failure come after the downstream service.
+
+    A candidate X is "propagating" if X itself emitted an error span
+    calling a different candidate Y. If every candidate would be
+    propagating (cycle), nothing is demoted.
+
+    Returns (ranked_candidates, propagating_candidates).
+    """
+
+    candidate_set = set(candidates)
+
+    propagating = set()
+
+    for edge in edges:
+        emitter = edge.get("emitter")
+        callee = edge.get("callee")
+
+        if (
+            emitter in candidate_set
+            and callee in candidate_set
+            and emitter != callee
+        ):
+            propagating.add(emitter)
+
+    if propagating == candidate_set:
+        propagating = set()
+
+    def sort_key(name: str) -> Tuple[int, int, str]:
+        return (
+            1 if name in propagating else 0,
+            -error_counts.get(name, 0),
+            name,
+        )
+
+    ranked = sorted(candidate_set, key=sort_key)
+
+    return ranked, sorted(propagating)
+
+
 def extract_trace(data: Dict[str, Any]) -> Dict[str, Any]:
     """Extract deterministic Trace Agent evidence."""
 
@@ -413,6 +511,14 @@ def extract_trace(data: Dict[str, Any]) -> Dict[str, Any]:
                     "candidate_service":
                         extract_service_from_operation(operation),
                 })
+
+    # V2.1: record (emitting service -> called service) for every error
+    # span so candidates that only propagate a downstream failure can be
+    # ranked below the downstream service.
+    error_span_edges = extract_error_span_edges(
+        analysis,
+        error_spans
+    )
 
     error_span_count = analysis.get(
         "error_span_count",
@@ -477,6 +583,8 @@ def extract_trace(data: Dict[str, Any]) -> Dict[str, Any]:
         "warning_spans": warning_spans,
 
         "trace_error_operations": trace_error_operations,
+
+        "error_span_edges": error_span_edges,
 
         "error_detected": error_detected,
         "warning_detected": bool(
@@ -802,8 +910,8 @@ def derive_deterministic_findings(
         )
 
         warnings.append(
-            "A deployment scaled to zero may be intentional "
-            "fault injection; it is not by itself proof of root cause."
+            "Zero desired replicas is availability evidence; on its "
+            "own it does not establish the root cause."
         )
 
     if k8s.get("no_ready_endpoints"):
@@ -883,10 +991,44 @@ def derive_deterministic_findings(
         set(affected_services)
     )
 
-    # Deduplicate root-cause candidates.
-    root_cause_candidates = sorted(
-        set(root_cause_candidates)
+    # Deduplicate and rank root-cause candidates (V2.1): services that
+    # only propagate a failing downstream call are ranked last.
+    candidate_error_counts: Dict[str, int] = {}
+
+    for operation in trace_error_operations:
+        candidate = operation.get("candidate_service")
+
+        if candidate:
+            count = operation.get("error_count")
+
+            candidate_error_counts[candidate] = (
+                candidate_error_counts.get(candidate, 0)
+                + (count if isinstance(count, int) else 1)
+            )
+
+    root_cause_candidates, propagating_candidates = (
+        rank_candidates_by_propagation(
+            root_cause_candidates,
+            safe_list(trace.get("error_span_edges")),
+            candidate_error_counts,
+        )
     )
+
+    for service in propagating_candidates:
+        findings.append(
+            "Trace evidence shows {} failing while calling another "
+            "failing candidate service; ranked as propagating "
+            "the failure.".format(service)
+        )
+
+    # A service correlated across Trace and Kubernetes evidence is
+    # placed first.
+    for match in correlation_matches:
+        service = match.get("service")
+
+        if service in root_cause_candidates:
+            root_cause_candidates.remove(service)
+            root_cause_candidates.insert(0, service)
 
     # ------------------------------------------------------------------
     # Deterministic incident status
@@ -959,27 +1101,6 @@ def derive_deterministic_findings(
 
         deterministic_confidence = "NONE"
 
-    # ------------------------------------------------------------------
-    # Special F01 interpretation
-    # ------------------------------------------------------------------
-
-    f01_pattern = False
-
-    if (
-        k8s_service == "currencyservice"
-        and k8s.get("scaled_to_zero")
-        and k8s.get("no_ready_endpoints")
-        and trace_failure
-        and "currencyservice" in trace_candidates
-    ):
-        f01_pattern = True
-
-        findings.append(
-            "Observed F01-style dependency failure pattern: "
-            "currencyservice is unavailable while traces show "
-            "failed CurrencyService calls."
-        )
-
     return {
         "deterministic_incident_status":
             deterministic_incident_status,
@@ -1002,8 +1123,8 @@ def derive_deterministic_findings(
         "cross_agent_correlations":
             correlation_matches,
 
-        "f01_pattern_detected":
-            f01_pattern,
+        "propagating_candidates":
+            propagating_candidates,
 
         "metric_degradation":
             metric_failure,
@@ -1328,13 +1449,17 @@ STRICT RULES:
    unavailable, this is strong cross-agent evidence that the downstream
    service is the root-cause candidate.
 
-7. A Kubernetes deployment with desired replicas = 0 may be intentional
-   fault injection. Do not claim that scaling to zero was accidental.
+7. Do not speculate about why a deployment has desired replicas = 0.
+   Report it only as observed Kubernetes state.
 
 8. Distinguish:
-       - injected experimental fault
+       - observed Kubernetes state
        - observed application failure
        - root-cause candidate
+
+   deterministic_root_cause_candidates is ranked: services listed in
+   propagating_candidates failed while calling another failing
+   candidate and are less likely to be the origin.
 
 9. Do not perform or recommend remediation steps in this response.
    Remediation is handled by another agent.
@@ -1516,12 +1641,6 @@ def validate_ollama_analysis(
         )
     )
 
-    f01_pattern = bool(
-        deterministic.get(
-            "f01_pattern_detected"
-        )
-    )
-
     # ---------------------------------------------------------------
     # Strong deterministic correlation
     # ---------------------------------------------------------------
@@ -1537,33 +1656,22 @@ def validate_ollama_analysis(
             "HIGH"
         )
 
-        # If the model selected no root cause or selected a conflicting
-        # service, use the deterministic candidate.
-        if candidates:
+        # V2.1: the cross-agent correlated service is authoritative; the
+        # model may not substitute another candidate.
+        correlated_service = safe_dict(
+            correlations[0]
+        ).get("service")
 
-            model_candidate = analysis.get(
-                "root_cause_candidate"
+        if correlated_service:
+
+            model_candidate = service_name_normalize(
+                analysis.get("root_cause_candidate")
             )
 
-            normalized_model_candidate = (
-                service_name_normalize(
-                    model_candidate
-                )
-            )
-
-            normalized_candidates = [
-                service_name_normalize(c)
-                for c in candidates
-            ]
-
-            if (
-                not normalized_model_candidate
-                or normalized_model_candidate
-                not in normalized_candidates
-            ):
+            if model_candidate != correlated_service:
 
                 analysis["root_cause_candidate"] = (
-                    candidates[0]
+                    correlated_service
                 )
 
         # Ensure the supporting agents include the correlated sources.
@@ -1588,70 +1696,10 @@ def validate_ollama_analysis(
         )
 
     # ---------------------------------------------------------------
-    # F01 specific guard
-    # ---------------------------------------------------------------
-
-    if f01_pattern:
-
-        analysis["incident_status"] = (
-            "CONFIRMED_INCIDENT"
-        )
-
-        analysis["root_cause_candidate"] = (
-            "currencyservice"
-        )
-
-        analysis["confidence"] = (
-            "HIGH"
-        )
-
-        reasoning = safe_list(
-            analysis.get(
-                "reasoning"
-            )
-        )
-
-        required_reasoning = [
-            "Trace evidence shows failed CurrencyService calls.",
-            "Kubernetes evidence shows currencyservice has zero ready endpoints.",
-            "Kubernetes evidence shows currencyservice has zero desired/available/ready replicas in the captured experiment state.",
-            "The evidence supports currencyservice unavailability as the root-cause candidate."
-        ]
-
-        for statement in required_reasoning:
-
-            if statement not in reasoning:
-                reasoning.append(
-                    statement
-                )
-
-        analysis["reasoning"] = reasoning
-
-        supporting_agents = safe_list(
-            analysis.get(
-                "supporting_agents"
-            )
-        )
-
-        for agent in [
-            "trace-agent",
-            "k8s-agent",
-        ]:
-
-            if agent not in supporting_agents:
-                supporting_agents.append(
-                    agent
-                )
-
-        analysis["supporting_agents"] = (
-            supporting_agents
-        )
-
-    # ---------------------------------------------------------------
     # If no strong correlation, prevent false high confidence.
     # ---------------------------------------------------------------
 
-    if not correlations and not f01_pattern:
+    if not correlations:
 
         if deterministic_status == "POSSIBLE_INCIDENT":
 
@@ -1770,7 +1818,7 @@ def run_coordinator(
     # ---------------------------------------------------------------
 
     result = {
-        "version": "V2",
+        "version": "V2.1",
 
         "agent": "coordinator",
 
